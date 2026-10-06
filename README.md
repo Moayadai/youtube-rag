@@ -1,5 +1,5 @@
 
-
+```markdown
 # 🎥 YouTube Video RAG Assistant
 
 An advanced Retrieval-Augmented Generation (RAG) system that extracts, processes, and queries knowledge directly from lengthy YouTube videos.
@@ -21,29 +21,35 @@ This project was customized and optimized by **Moayad Fawzi Al-Shumairi** to uti
 
 ## ⚙️ Setup & Installation
 
-1. **Clone the repository:**
-   git clone [https://github.com/yourusername/youtube-rag.git]
-   cd youtube-rag
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/Moayadai/youtube-rag.git](https://github.com/Moayadai/youtube-rag.git)
+cd youtube-rag
 
+```
 
-2. **Set up the virtual environment:**
-   python3 -m venv .venv
-   source .venv/bin/activate
+**2. Set up the virtual environment:**
 
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
 
+```
 
-3. **Install dependencies:**
-   pip install -r requirements.txt
+**3. Install dependencies:**
 
+```bash
+pip install -r requirements.txt
 
+```
 
-4. **Environment Variables:**
+**4. Environment Variables:**
 Create a `.env` file in the root directory. Since this version uses ChromaDB, you only need to provide your OpenAI API key:
-  env
+
+```text
 OPENAI_API_KEY=your_openai_api_key_here
 
-
-
+```
 
 ## 💡 Usage
 
@@ -54,3 +60,6 @@ Run the Jupyter Notebook (`rag.ipynb`) to initialize the system interactively. P
 * **Architecture Optimization & Development:** Moayad Fawzi Al-Shumairi.
 * **Original Inspiration:** This project builds upon the foundational RAG concepts presented by *Underfitted*, significantly modified for local database execution and streamlined performance.
 
+```
+
+```
