@@ -1,65 +1,55 @@
-
-```markdown
 # 🎥 YouTube Video RAG Assistant
 
-An advanced Retrieval-Augmented Generation (RAG) system that extracts, processes, and queries knowledge directly from lengthy YouTube videos.
+## 🎬 Title & Description
+YouTube Video RAG Assistant is an advanced Retrieval-Augmented Generation (RAG) system for extracting and querying knowledge from YouTube videos. It transcribes long-form video audio, processes and indexes the content into a local vector store, and enables context-aware Q&A over the video's content. This project was customized and optimized by **Moayad Fawzi Al-Shumairi** to utilize local vector storage instead of cloud-based vector databases.
 
-This project was customized and optimized by **Moayad Fawzi Al-Shumairi** to utilize local vector storage, eliminating the need for external cloud-based vector databases like Pinecone.
+## ✨ Key Enhancements & Features
+- **Local Vector Database:** Migrated from Pinecone to **ChromaDB** for secure, local, and cost-free embedding storage.
+- **Automated Transcription:** Uses OpenAI **Whisper** to convert audio from YouTube videos into accurate text transcripts.
+- **Intelligent Chunking:** Implements LangChain's `RecursiveCharacterTextSplitter` to handle very large transcripts (e.g., multi-hour videos) without hitting model token limits.
+- **Context-Aware Q&A:** Powered by `GPT-3.5-Turbo` and `OpenAIEmbeddings` to generate precise, low-hallucination answers strictly based on the provided video content.
 
-## 🚀 Key Enhancements & Features
-*   **Local Vector Database:** Migrated from Pinecone to **ChromaDB** for secure, local, and cost-free embedding storage.
-*   **Automated Transcription:** Uses OpenAI's **Whisper** model to convert audio from any YouTube video into highly accurate text transcripts.
-*   **Intelligent Chunking:** Implements LangChain's `RecursiveCharacterTextSplitter` to handle massive transcripts (e.g., 3+ hour videos) without hitting AI token limits.
-*   **Context-Aware Q&A:** Powered by `GPT-3.5-Turbo` and `OpenAIEmbeddings` to generate precise, hallucination-free answers based *strictly* on the provided video content.
-
-## 🛠️ Tech Stack
-*   **Core:** Python 3
-*   **Orchestration:** LangChain
-*   **LLM & Embeddings:** OpenAI API
-*   **Vector Database:** ChromaDB (Local)
-*   **Audio Processing:** Whisper, PyTube
+## 🧰 Tech Stack
+- Python 3
+- LangChain
+- OpenAI API
+- ChromaDB (Local)
+- Whisper
+- PyTube
 
 ## ⚙️ Setup & Installation
 
-**1. Clone the repository:**
+1. Clone the repository and change into it:
 ```bash
 git clone https://github.com/Moayadai/youtube-rag.git
 cd youtube-rag
-
 ```
 
-**2. Set up the virtual environment:**
-
+2. Set up a virtual environment and activate it:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-
 ```
 
-**3. Install dependencies:**
-
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
-
 ```
 
-**4. Environment Variables:**
-Create a `.env` file in the root directory. Since this version uses ChromaDB, you only need to provide your OpenAI API key:
-
+4. Environment Variables
+Create a `.env` file in the project root and add your OpenAI API key:
 ```text
 OPENAI_API_KEY=your_openai_api_key_here
-
 ```
 
-## 💡 Usage
+> Note: This repository uses ChromaDB for local vector storage, so no external vector DB credentials are required.
 
-Run the Jupyter Notebook (`rag.ipynb`) to initialize the system interactively. Provide any YouTube URL in the designated cell, wait for the transcription and embedding process, and start asking questions about the video's content!
+## ▶️ Usage
+Open and run the Jupyter Notebook `rag.ipynb`. In the notebook:
+1. Paste any YouTube video URL into the designated cell.
+2. Run the cells to download audio, transcribe with Whisper, chunk and embed the transcript, and build the local ChromaDB index.
+3. Once processing completes, use the notebook's Q&A cells to ask questions — the assistant will answer using only the indexed video content.
 
 ## 📜 Credits
-
-* **Architecture Optimization & Development:** Moayad Fawzi Al-Shumairi.
-* **Original Inspiration:** This project builds upon the foundational RAG concepts presented by *Underfitted*, significantly modified for local database execution and streamlined performance.
-
-```
-
-```
+- **Architecture Optimization & Development:** Moayad Fawzi Al-Shumairi
+- **Original Inspiration:** Underfitted
